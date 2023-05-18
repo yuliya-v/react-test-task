@@ -1,23 +1,8 @@
 import { useEffect, useState } from 'react';
+import './Greeting.css';
 
 function Greeting() {
   const [greeting, setGreeting] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
-
-  const updateTime = () => {
-    const LOCALE = 'ru-RU';
-    const TIME_OPTIONS = { hour12: false };
-    const DATE_OPTIONS = {
-      weekday: 'long',
-      month: 'long',
-      day: 'numeric',
-    } as const;
-
-    const currentDate = new Date();
-    setTime(currentDate.toLocaleTimeString(LOCALE, TIME_OPTIONS));
-    setDate(currentDate.toLocaleDateString(LOCALE, DATE_OPTIONS));
-  };
 
   const updateGreeting = () => {
     enum GREETINGS {
@@ -34,19 +19,16 @@ function Greeting() {
   };
 
   useEffect(() => {
+    updateGreeting();
+  }, []);
+
+  useEffect(() => {
     const timer = setTimeout(() => {
-      updateTime();
       updateGreeting();
     }, 1000);
     return () => clearTimeout(timer);
-  }, [time]);
-  return (
-    <div className="greeting">
-      {time}
-      {date}
-      {greeting}
-    </div>
-  );
+  }, [greeting]);
+  return <div className="greeting">{greeting}</div>;
 }
 
 export default Greeting;

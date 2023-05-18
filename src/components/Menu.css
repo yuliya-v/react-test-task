@@ -21,9 +21,6 @@
   transition: all 0.3s ease-in-out;
 }
 
-.nav-list-item:hover {
-}
-
 .nav-list-item:hover a {
   color: #fac09f;
   background-color: #7f7f89;
