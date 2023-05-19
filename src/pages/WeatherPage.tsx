@@ -28,8 +28,9 @@ interface WeatherData {
 }
 
 function WeatherPage() {
+  const city = localStorage.getItem(STORAGE_KEY) || DEFAULT_CITY;
   const [weather, setWeather] = useState<WeatherData>();
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(city);
   const [error, setError] = useState('');
   const [modal, setModal] = useState(false);
 
@@ -57,17 +58,8 @@ function WeatherPage() {
       city: data.name,
     });
     setError('');
+    localStorage.setItem(STORAGE_KEY, query);
   }
-
-  useEffect(() => {
-    const city = localStorage.getItem(STORAGE_KEY);
-    setQuery(city || DEFAULT_CITY);
-    return () => {
-      if (weather) {
-        localStorage.setItem(STORAGE_KEY, weather.city);
-      }
-    };
-  }, []);
 
   useEffect(() => {
     fetchWeather(query);
@@ -96,9 +88,11 @@ function WeatherPage() {
             <span className="wind">{'Ветер: ' + weather.wind + ' м/с'}</span>
           </>
         )}
-        <button className="weather-btn" onClick={() => setModal(true)}>
-          Изменить город
-        </button>
+        {(weather || error) && (
+          <button className="weather-btn" onClick={() => setModal(true)}>
+            Изменить город
+          </button>
+        )}
       </div>
     </>
   );
