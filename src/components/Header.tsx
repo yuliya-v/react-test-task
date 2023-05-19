@@ -17,7 +17,7 @@ function Header() {
           </Overlay>
         )}
         <Link to="/">
-          <div className="logo">NewsApp</div>
+          <div className="logo">WeatherApp</div>
         </Link>
       </header>
     </div>

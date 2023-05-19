@@ -10,10 +10,7 @@ function Menu({ onNavigation }: MenuProps) {
     <nav className="nav">
       <ul className="nav-list" onClick={onNavigation}>
         <li className="nav-list-item">
-          <Link to="/">Главная</Link>
-        </li>
-        <li className="nav-list-item">
-          <Link to="news">Новости</Link>
+          <Link to="/">Календарь</Link>
         </li>
         <li className="nav-list-item">
           <Link to="weather">Погода</Link>

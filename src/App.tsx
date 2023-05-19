@@ -4,6 +4,7 @@ import MainPage from './pages/MainPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import WeatherPage from './pages/WeatherPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <main className="wrapper">
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/weather" element={<WeatherPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
