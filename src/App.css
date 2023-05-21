@@ -1,7 +1,17 @@
 #root {
-  max-width: 1280px;
   min-height: 100vh;
-  margin: 0 auto;
+  background-color: #f5efeb;
+}
+
+main {
+  min-height: calc(100vh - 100px);
   background-color: #fff;
-  box-sizing: border-box;
+}
+
+.wrapper {
+  min-width: 375px;
+  margin: 0 auto;
+  max-width: 1180px;
+  overflow: hidden;
+  padding: 15px;
 }

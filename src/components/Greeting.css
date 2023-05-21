@@ -1,0 +1,15 @@
+.greeting {
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Forum', cursive;
+  font-size: 44px;
+  font-weight: 100;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  .greeting {
+    padding: 15px;
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,29 @@
+.date {
+  margin: 40px auto 0;
+  padding: 10px;
+  font-size: 40px;
+  font-weight: 100;
+  text-align: center;
+  color: #216898;
+}
+
+.time {
+  margin: 0 auto 20px;
+  padding: 10px;
+  font-size: 34px;
+  font-weight: 100;
+  text-align: center;
+  color: #216898;
+}
+
+@media screen and (max-width: 500px) {
+  .date {
+    margin-top: 25px;
+    font-size: 24px;
+  }
+
+  .time {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+}
