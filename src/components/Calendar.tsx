@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Calendar.css';
-
-function capitalize(value: string): string {
-  return value[0].toUpperCase() + value.slice(1);
-}
+import { capitalize } from '../utils/utils';
 
 function Calendar() {
   const [date, setDate] = useState('');
